@@ -21,11 +21,11 @@ while($row = mysqli_fetch_assoc($result)) {
     $myTasks[] = $row;
 }
 mysqli_close($conn);
-echo '<p>Średnia 1</p>';
+echo '<p>Średnia dni nauki</p>';
 echo '<p>'.sprintf("%02d:%02d", floor($myTasks['0']['avg']/60), $myTasks['0']['avg']%60).'</p>';
-echo '<p>Średnia 2</p>';
+echo '<p>Średnia ostatnich 30 dni</p>';
 echo '<p>'.sprintf("%02d:%02d", floor($myTasks['0']['avg2']/60), $myTasks['0']['avg2']%60).'</p>';
-echo '<p>Ilość lekcji</p>';
+echo '<p>Ilość dni nauki</p>';
 echo '<p>'.($myTasks['0']['il_lekcji']).'</p>';
 
 ?>

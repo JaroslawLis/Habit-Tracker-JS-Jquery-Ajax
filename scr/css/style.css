@@ -2,100 +2,135 @@ body {
     background: #343434;
     margin: 0 auto;
 }
+
 div.container {
     display: grid;
-    grid-template-areas: 
-        "header header header header"
-        "content0 content1 content2 nav"
-        "form table content3 none"
-        "footer footer footer foter"
-        ;
-    
-    grid-template-columns: 2fr 2fr 2fr 1fr;
+    grid-template-areas: "header header header " "navigation none none " "content0 content1 content2 " "form table content3 " "footer footer footer ";
+
+    grid-template-columns: 2fr 2fr 2fr;
     grid-gap: 5px;
-    
+    max-width: 1200px;
+    margin: 0 auto;
+
 }
+
 div > div {
     border: 2px solid black;
-   
+
+}
+
+.nav li {
+    float: left;
+    margin: 4px;
 }
 
 div#last_30_days {
     text-align: center;
-   
+
 }
 
 span {
-   margin-left: 15px;
+    margin-left: 15px;
 }
+
 div#data {
-  
+
     background: #212121;
     color: white;
     border: 3px solid yellow;
 
 }
+
 div#last_30_days {
- 
+
     background: #212121;
     color: white;
     border: 3px solid purple;
-     
-    
+
+
 }
-div#last_min_max, div#last_min_max_year  {
+
+div#last_min_max,
+div#last_min_max_year {
     background: #212121;
     color: white;
     border: 3px solid olive;
-        text-align: center;
+    text-align: center;
 
 }
-div#last_min_max p, div#last_min_max_year p{
+
+div#last_min_max p,
+div#last_min_max_year p {
     font-weight: 700;
 }
+
 div#last_30_days > h4 {
     text-align: center;
 }
+
 div#l30data {
     /*width: 100%;*/
     text-align: center;
 }
 
 div#add_form {
-     
-   /* width: 40%;*/ 
+
+    /* width: 40%;*/
     padding-left: 25px;
-    margin-top: 15px; 
+    margin-top: 15px;
     border: 4px solid green;
     color: white;
 }
+
 div#add_form input {
     color: black;
 }
 
 .header {
-         grid-area: header;
-         color: yellowgreen;
+    grid-area: header;
+    color: yellowgreen;
     text-align: center;
 }
 
+.nav {
+    grid-area: navigation;
+}
+
 .content0 {
-     grid-area: content0;
+    grid-area: content0;
 }
+
 .content1 {
-     grid-area: content1;
+    grid-area: content1;
 }
+
 .content2 {
     grid-area: content2;
 }
+
 .content3 {
     grid-area: content3;
 }
+
 .form {
     grid-area: form;
     color: red;
 }
+
 .table {
     grid-area: table;
     color: white;
+}
+
+@media only screen and (max-width: 500px) {
+    div.container {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: "header  " "navigation  " "content0" "content1 " "content2 " "form" "table" "content3 " "footer";
+
+
+
+
+    }
+
 }

@@ -6,6 +6,9 @@ $(document).ready(function () {
     // show last 30 days activity
     function showLast30days() {
         $('#last_30_days').empty();
+        $('#last_30_days').append('<h4>Ostatnie 30 dni<h4>')
+        
+        
     $.ajax({
             type: 'get',
             url: 'q_last30days.php',
@@ -95,12 +98,11 @@ function showLastMinMaxYear() {
                 var html ='<ol><span>DATA</span><span>Czas nauki</span>';
                 $.each(response, function (index) {
                  html += '<li><span>'+response[index].data +'</span><span>' + minutes(parseInt(response[index].period))+'</span></li>';
-                    /*  $('#table').append( response[index].data +  response[index].period );
-*/
+                 
                 });
                 html += '</ol>';
                 $('#table').append(html);
-                //console.log(html);
+             
 
             }
         });
